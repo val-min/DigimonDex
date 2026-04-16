@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AC194657C0F8178F2069D0EE /* Pods_DigimonDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC22794FB622BB578E91B3B0 /* Pods_DigimonDex.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		079D8891C277188CE3D2EEF1 /* Pods-DigimonDex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigimonDex.release.xcconfig"; path = "Target Support Files/Pods-DigimonDex/Pods-DigimonDex.release.xcconfig"; sourceTree = "<group>"; };
 		39C8150B2F8E5C4800A8D727 /* DigimonDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigimonDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C8C37DD5CCB3F9397595401 /* Pods-DigimonDex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigimonDex.debug.xcconfig"; path = "Target Support Files/Pods-DigimonDex/Pods-DigimonDex.debug.xcconfig"; sourceTree = "<group>"; };
+		DC22794FB622BB578E91B3B0 /* Pods_DigimonDex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigimonDex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,17 +30,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC194657C0F8178F2069D0EE /* Pods_DigimonDex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34B1E82BDECB3DA86BB05D6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC22794FB622BB578E91B3B0 /* Pods_DigimonDex.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		39C815022F8E5C4800A8D727 = {
 			isa = PBXGroup;
 			children = (
 				39C8150D2F8E5C4800A8D727 /* DigimonDex */,
 				39C8150C2F8E5C4800A8D727 /* Products */,
+				413B63162299D2B30D6EC60A /* Pods */,
+				34B1E82BDECB3DA86BB05D6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +63,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		413B63162299D2B30D6EC60A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C8C37DD5CCB3F9397595401 /* Pods-DigimonDex.debug.xcconfig */,
+				079D8891C277188CE3D2EEF1 /* Pods-DigimonDex.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -52,9 +79,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39C815192F8E5C4900A8D727 /* Build configuration list for PBXNativeTarget "DigimonDex" */;
 			buildPhases = (
+				AAF75E9FB7F57DB0AA29DC12 /* [CP] Check Pods Manifest.lock */,
 				39C815072F8E5C4800A8D727 /* Sources */,
 				39C815082F8E5C4800A8D727 /* Frameworks */,
 				39C815092F8E5C4800A8D727 /* Resources */,
+				6F1364CCA5D7F5B009D7400F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -64,8 +93,6 @@
 				39C8150D2F8E5C4800A8D727 /* DigimonDex */,
 			);
 			name = DigimonDex;
-			packageProductDependencies = (
-			);
 			productName = DigimonDex;
 			productReference = 39C8150B2F8E5C4800A8D727 /* DigimonDex.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +140,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F1364CCA5D7F5B009D7400F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigimonDex/Pods-DigimonDex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigimonDex/Pods-DigimonDex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigimonDex/Pods-DigimonDex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAF75E9FB7F57DB0AA29DC12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigimonDex-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39C815072F8E5C4800A8D727 /* Sources */ = {
@@ -246,6 +315,7 @@
 		};
 		39C8151A2F8E5C4900A8D727 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C8C37DD5CCB3F9397595401 /* Pods-DigimonDex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -254,12 +324,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DigimonDex/Preview Content\"";
 				DEVELOPMENT_TEAM = 348C973Y9A;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -275,6 +347,7 @@
 		};
 		39C8151B2F8E5C4900A8D727 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 079D8891C277188CE3D2EEF1 /* Pods-DigimonDex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -283,12 +356,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DigimonDex/Preview Content\"";
 				DEVELOPMENT_TEAM = 348C973Y9A;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

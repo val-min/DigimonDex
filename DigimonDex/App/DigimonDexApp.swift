@@ -11,7 +11,9 @@ import SwiftUI
 struct DigimonDexApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            DigimonListView()
+                            .preferredColorScheme(.dark)
         }
     }
 }
