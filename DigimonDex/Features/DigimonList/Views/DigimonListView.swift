@@ -30,7 +30,11 @@ struct DigimonListView: View {
                 case .error(let msg) where viewModel.items.isEmpty:
                     errorView(message: msg)
                 default:
-                    contentView
+                    if viewModel.isEmpty {
+                            emptyView
+                        } else {
+                            contentView
+                        }
                 }
             }
             .navigationTitle("DigimonDex")
@@ -65,8 +69,11 @@ struct DigimonListView: View {
                 }
                 
                 if viewModel.hasMore {
-                    loadMoreIndicator
-                        .gridCellColumns(2)
+                    ProgressView()
+                            .tint(.white.opacity(0.4))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 20)
+                            .gridCellColumns(2)
                 }
                 
                 if case .error(let msg) = viewModel.state, !viewModel.items.isEmpty {
@@ -91,6 +98,37 @@ struct DigimonListView: View {
                 .font(.system(.body, design: .rounded))
                 .foregroundStyle(.white.opacity(0.7))
         }
+    }
+    
+    // Empty View
+    private var emptyView: some View {
+        VStack(spacing: 16) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 52))
+                .foregroundStyle(.white.opacity(0.3))
+            
+            Text("No Digimon Found")
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundStyle(.white)
+            
+            Text("Try adjusting your filters")
+                .font(.system(.body, design: .rounded))
+                .foregroundStyle(.white.opacity(0.5))
+            
+            Button {
+                viewModel.filter.reset()
+            } label: {
+                Label("Clear Filters", systemImage: "xmark.circle")
+                    .font(.system(.body, weight: .semibold))
+                    .foregroundStyle(Color.digiDark)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 10)
+                    .background(Color.digiOrange)
+                    .clipShape(Capsule())
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     private var loadMoreIndicator: some View {

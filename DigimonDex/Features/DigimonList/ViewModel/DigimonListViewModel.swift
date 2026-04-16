@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-enum LoadingState {
+enum LoadingState: Equatable {
     case idle, loading, loaded, error(String)
 }
 
@@ -19,6 +19,9 @@ final class DigimonListViewModel: ObservableObject {
     @Published private(set) var items: [DigimonListItem] = []
     @Published private(set) var state: LoadingState = .idle
     @Published private(set) var hasMore: Bool = true
+    var isEmpty: Bool {
+        state == .loaded && items.isEmpty
+    }
     @Published var filter: FilterOptions = FilterOptions()
     @Published var showFilters: Bool = false
     
@@ -117,4 +120,5 @@ final class DigimonListViewModel: ObservableObject {
     private func postPaginationError(_ message: String) {
         // handled via separate @Published flag if needed
     }
+    
 }
